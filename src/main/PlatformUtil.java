@@ -23,7 +23,7 @@
  * questions.
  */
 
-package lib;
+package main;
 
 import java.security.AccessController;
 import java.security.PrivilegedAction;
