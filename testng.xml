@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Login">
+    <classes>
+      <class name="main.java.SignInTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="FlightBooking">
+    <classes>
+      <class name="main.java.FlightBookingTest"/>
+    </classes>
+  </test>
+  <test name="HotelBooking">
+    <classes>
+      <class name="main.java.HotelBookingTest"/>
+    </classes>
+  </test>
+</suite> <!-- Suite -->
