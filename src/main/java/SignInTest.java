@@ -1,4 +1,8 @@
-import com.sun.javafx.PlatformUtil;
+
+package main.java;
+//import com.sun.javafx.PlatformUtil;
+import main.PlatformUtil;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,14 +11,15 @@ import org.testng.annotations.Test;
 
 public class SignInTest {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
 
     @Test
     public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
         setDriverPath();
-
+        driver = new ChromeDriver();
         driver.get("https://www.cleartrip.com/");
+        driver.manage().window().maximize();
         waitFor(2000);
 
         driver.findElement(By.linkText("Your trips")).click();
