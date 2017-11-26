@@ -1,4 +1,9 @@
-import com.sun.javafx.PlatformUtil;
+package main.java;
+//Refere the java PlatformUtil class lib file inside the main directory
+import main.PlatformUtil;
+//commented the moved PlatformUtil in java 1.8, in code review, comment line should be removed
+//import com.sun.javafx.PlatformUtil;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -12,13 +17,15 @@ import java.util.List;
 
 public class FlightBookingTest {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
 
 
     @Test
     public void testThatResultsAppearForAOneWayJourney() {
 
         setDriverPath();
+        driver = new ChromeDriver();
+
         driver.get("https://www.cleartrip.com/");
         waitFor(2000);
         driver.findElement(By.id("OneWay")).click();
@@ -33,7 +40,7 @@ public class FlightBookingTest {
         originOptions.get(0).click();
 
         driver.findElement(By.id("toTag")).clear();
-        driver.findElement(By.id("toTag")).sendKeys("Delhi");
+        driver.findElement(By.id("toTag")).sendKeys("New Delhi");
 
         //wait for the auto complete options to appear for the destination
 
